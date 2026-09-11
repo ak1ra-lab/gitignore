@@ -78,9 +78,11 @@ JSON/MD/CSS/HTML/YML get `prettier --write` only.
 
 ## Deployment
 
-Cloudflare Pages via GitHub Actions (`cloudflare/wrangler-action@v3`).
-Push to `master` → quality gate (typecheck + lint) → deploy.
+Cloudflare Pages via GitHub Actions (`cloudflare/wrangler-action`).
+Push to `master` → quality gate (`ci.yml`, also called via `workflow_call`) → deploy.
 Requires secrets: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`.
+All `uses:` refs are SHA-pinned with a `# vX.Y.Z` comment; Dependabot's `github-actions`
+ecosystem opens update PRs (reviewed and merged manually).
 
 ## Gotchas
 
