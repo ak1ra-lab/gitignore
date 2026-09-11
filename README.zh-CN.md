@@ -55,13 +55,11 @@ git ignore Go,Node,macOS > .gitignore
 4. 在 GitHub 仓库 Secrets 中添加 (在 Environment `cloudflare-pages` 下):
    - `CLOUDFLARE_API_TOKEN`
    - `CLOUDFLARE_ACCOUNT_ID`
-   - `GITIGNORE_BOT_PAT` -- Fine-grained PAT, 权限 `contents: write` (供定时子模块更新器使用)
+   - `GITIGNORE_BOT_PAT` -- Fine-grained PAT, 权限 `contents: write` (供定时子模块更新器使用; 用 `GITHUB_TOKEN` 推送不会触发 `deploy.yml`)
 
 可选:
 
-5. 在仓库 Settings → Code security 中开启 **Dependabot security updates**.
-6. 在仓库 Settings → General → Pull Requests 中开启 **Allow auto-merge**.
-7. `dependabot-auto-merge.yml` 会在 CI 通过后自动 approve 并 squash 合并 Dependabot PR.
+5. 在仓库 Settings → Code security 中开启 **Dependabot security updates**. Dependabot PR 需人工审查后合并.
 
 ## 更新模板
 

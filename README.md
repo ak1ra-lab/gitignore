@@ -56,13 +56,11 @@ Prerequisites:
 4. Add these secrets to your GitHub repo (under Environment `cloudflare-pages`):
    - `CLOUDFLARE_API_TOKEN`
    - `CLOUDFLARE_ACCOUNT_ID`
-   - `GITIGNORE_BOT_PAT` -- a fine-grained PAT with `contents: write` (used by the scheduled submodule updater)
+   - `GITIGNORE_BOT_PAT` -- a fine-grained PAT with `contents: write` (used by the scheduled submodule updater; pushes made with `GITHUB_TOKEN` would not trigger `deploy.yml`)
 
 Optional:
 
-5. Enable **Dependabot security updates** in repo Settings → Code security.
-6. Enable **Allow auto-merge** in repo Settings → General → Pull Requests.
-7. `dependabot-auto-merge.yml` will approve and auto-merge Dependabot PRs once CI passes.
+5. Enable **Dependabot security updates** in repo Settings → Code security. Dependabot PRs are reviewed and merged manually.
 
 ## Updating templates
 
