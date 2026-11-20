@@ -33,7 +33,7 @@ jobs:
         run: bun run generate:templates
 
       - name: Type-check
-        run: tsc --noEmit
+        run: bun run check
 
       - name: Lint
         run: bun run lint
